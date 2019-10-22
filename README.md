@@ -5,6 +5,7 @@ Features of the App:
 1. Input field with button to add todos 
 2. Display todos to the user as description and checkbox as completed
 3. Display the length/number of incomplete todos
+4. Displaying dynamic content
 
 Requirements:
 1. Build in react
