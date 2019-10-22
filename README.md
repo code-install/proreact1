@@ -2,6 +2,12 @@
 Build a simple todo app using react
 
 Features of the App:
-1. Input field with add button to add todos 
+1. Input field with button to add todos 
 2. Display todos to the user as description and checkbox as completed
-3. Create completed checkbox table separately and display only completed
+3. Display the length/number of incomplete todos
+4. Displaying dynamic content
+
+Requirements:
+1. Build in react
+2. Use bootstrap classes 
+3. Build in single component
