@@ -13,12 +13,13 @@ class App extends Component {
                   { actions: "Get Shoes", done: false },
                   { actions: "Collect Tickets", done: false },
                   { actions: "Get Coffee", done: true }
-                ], 
+                ],
+                // empty variable to store user value
       newTextItem: ""
     }
 
   }
-
+// displaying dynamic contents
 // change state data
 // changeStateData = () => {
 //   this.setState({
@@ -27,12 +28,14 @@ class App extends Component {
  
 // }
 
+// method to grab the user value event.target and storing in a variable 
 updateNewTextValue = (event) => {
   this.setState({
     newTextItem: event.target.value
   })
 }
 
+// method to creat a new post in an existing array and clearing the input field
 createNewTodo = () => {
   
     this.setState({
@@ -44,7 +47,7 @@ createNewTodo = () => {
 
   }
   
-  
+// method to display value in the table by use map method and creating completed handler function. Checked is a prop
 todoTableRows = () => this.state.todoItems.map(item => 
     <tr key={item.actions}>
       <td>{item.actions}</td>
@@ -57,6 +60,7 @@ todoTableRows = () => this.state.todoItems.map(item =>
     
     )
 
+// Checkbox button call to check completed todos and set it true or else return existing todos 
   toggleTodo = (todo) => this.setState({
     todoItems: this.state.todoItems.map(item => item.actions === todo.actions ? 
     { ...item, done: !item.done } : item )
@@ -68,6 +72,7 @@ todoTableRows = () => this.state.todoItems.map(item =>
       <div>
         <h4 className="bg-primary text-white text-center p-2">
           {this.state.userName}'s Todo List
+          {/* filter method to update remaining todos  */}
           ({this.state.todoItems.filter(t => !t.done).length} items to do)
         </h4>
         <div className="container-fluid">
@@ -86,7 +91,7 @@ todoTableRows = () => this.state.todoItems.map(item =>
                   <th>Done</th>
               </tr>
             </thead>
-            {/* displaying the todo items */}
+            {/* displaying the todo items function */}
             <tbody>{this.todoTableRows()}</tbody>
           </table>
         </div>
